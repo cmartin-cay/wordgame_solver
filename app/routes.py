@@ -27,8 +27,8 @@ def index():
     combo_word_list = []
     if form.validate_on_submit():
         letters = form.letters.data
-        with open('/usr/share/dict/words') as f:
+        with open('app/static/words') as f:
             word_list = [word.rstrip("\n").lower() for word in f]
-        word_list = {word for word in word_list if len(word) >= 3 and len(word) <= 8 and not word.endswith("'s")}
+        word_list = {word for word in word_list if 8 >= len(word) >= 3 and not word.endswith("'s")}
         combo_word_list = solution(letters, word_list)
     return render_template('index.html', combo_word_list=combo_word_list, form=form)

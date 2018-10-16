@@ -1,0 +1,29 @@
+.wrapper{
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+            "head"
+            "cont"
+            "res";
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+
+.header{
+    grid-area: head;
+    text-align: center;
+
+}
+
+.content{
+    grid-area: cont;
+    text-align: center;
+
+}
+
+.results{
+    grid-area: res;
+    text-align: center;
+
+}
